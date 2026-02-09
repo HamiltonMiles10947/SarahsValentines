@@ -1,0 +1,267 @@
+body{
+    font-family:cursive;
+    background-color: rgb(238, 153, 246);
+    width: 90%;
+    margin-left: 5%;
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+h1, h2, p{
+    text-align: center;
+}
+
+#bearpics{
+    /* background-color: white; */
+    /* width: 50%; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bearPic {
+    width: 25%;
+    height: 30%;
+    background-color: white;
+   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px; 
+    border: 2px solid gray;
+    margin: 10px;
+}
+
+#mindChange {
+    background-color: rgb(254, 252, 239);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px; 
+    border: 2px solid gray;
+
+    transition: opacity 1.5s ease;
+}
+#mindChange.leave{
+    opacity: 0;
+    /* display: none; */
+}
+
+button{
+    border-radius: 10px;
+    padding: 12px 24px;
+    size: 12.5px;
+    color: rgb(255, 255, 255);
+    background-color: #5d728d;
+    font-size: large;
+
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    margin-left: 35%;
+    margin-right: 50%;
+    margin-bottom: 15px;
+}
+
+.datelist {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    width: 70%;
+    margin: 5px;
+    padding: 15px;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px; 
+    border: 2px solid gray;
+
+    list-style-type: none;
+    margin-bottom: 15px;
+    margin-left: 13%;
+    margin-right: 25%;
+
+    font-size: larger;
+}
+
+#envelope{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;               /* hidden by default */
+    text-align: left;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+
+    z-index: 1000;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.modal.open{
+    display: flex;
+    text-align: left;
+
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalContent,
+.modalContent * {
+    text-align: left;
+}
+.modalContent{
+    width: 55%;
+    background:         
+        linear-gradient(
+            135deg,
+            #f7edd2 0%,
+            #f3e5ab 100%
+        );
+
+    font-family: "Dancing Script", cursive;
+    font-size:x-large;
+
+    padding: 20px;
+    border-radius: 0px;
+    min-width: 300px;
+    position: relative;
+
+    text-align: left;
+    transform: rotate(-0.5deg);
+}
+
+table {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border-spacing: 30px;
+    max-width: 100%;
+}
+
+table tr td{
+    font-size: 100px;
+    
+    /* background-color: #5d728d; */
+    
+    
+    padding: 20px;
+
+    width: 150px;
+    height: 100px;
+}
+
+.flip-card {
+    background-color:transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(182, 108, 188);
+  border-radius: 25%;
+  color: black;
+}
+.flip-card-front img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25%;
+
+    /* margin-top: 50px; */
+}
+
+.flip-card-back {
+    background-color: rgb(182, 108, 188);
+    border-radius: 25%;
+    color: black;
+    transform: rotateY(180deg);
+    font-size: small;
+}
+
+@media screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block; /* Changes elements from table layout to block layout */
+  }
+
+  tbody, table, td, tr{
+    margin-bottom: 200px;
+    margin-left: 15px;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px; /* Hides the original table headers visually */
+    left: -9999px;
+  }
+
+  tr {
+    /* border: 1px solid #ccc; */
+    margin-bottom: 5px; /* Adds space between the 'cards' */
+  }
+
+  td {
+    border: none;
+    position: relative;
+    /* padding-left: 50%; Makes room for the custom header label */
+    text-align: center;
+
+  }
+
+  td::before {
+    /* Add the column headers back in using the 'content' property and data attributes */
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label); /* Uses data-label attribute from HTML */
+    font-weight: bold;
+  } 
+}
+
+#lastButton{
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-left: 25%;
+
+    width: 50%;
+    background-color: rgb(255, 180, 227);
+
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px; 
+    border: 2px solid gray;
+   }
+#lastButton button{
+    background-color: salmon;
+}
