@@ -11,6 +11,11 @@ const badImageNames = ["cry.png", "huh.png",];
 
 yesButton.addEventListener('mouseenter', ()=> {
     yesButton.style.backgroundColor = "rgb(236, 38, 160)";
+    if(container.style.backgroundColor == 'black'){
+        container.style.backgroundColor = 'white';
+        for (let header of words)
+            header.style.color = 'black';
+    }
 })
 
 yesButton.addEventListener("mouseleave", () => {
@@ -30,19 +35,13 @@ noButton.addEventListener('mouseleave', (e) => {
     returnButton();
 })
 noButton.addEventListener('mouseenter', () => {
-
-    if(container.style.backgroundColor == 'black'){
-        container.style.backgroundColor = 'white';
-        for (let header of words)
-            header.style.color = 'black';
-    }else{
-        container.style.backgroundColor = 'black';
-        for (let header of words)
-            header.style.color = 'white';
-    }
+    container.style.backgroundColor = 'black';
+    for (let header of words)
+        header.style.color = 'white';
 
     
 })
+
 
 
 function moveButton(e) {
@@ -110,4 +109,5 @@ function clickYes(){
     }
     yesButton.textContent = yesPrompts[yesClicked];
     changeImage("yes");
+
 }
